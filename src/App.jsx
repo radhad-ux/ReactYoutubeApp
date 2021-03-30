@@ -1,20 +1,26 @@
+// NPM Package
+import {useState} from "react";
+
 export default function App() {
+  console.log("App.jsx created");
+
+   //STATE
+    const [myState, setMyState] = useState(0);
+  
+  function increase(){ 
+    setMyState(myState + 1);
+
+  }  
+  function decrease(){
+    setMyState(myState - 1);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>React state Exercise</h1>
+      <p>state: {myState}</p>
+      <button onClick={increase}>Increase counter</button>
+      <button onClick={decrease}>Decrease counter</button>
     </div>
   );
 }
-
